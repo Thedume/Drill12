@@ -17,8 +17,8 @@ class Ball:
     def update(self):
         self.x += self.velocity * 100 * game_framework.frame_time
 
-        if self.x < 25 or self.x > 1600 - 25:
-            game_world.remove_object(self)
+        # if self.x < 25 or self.x > 1600 - 25:
+        #     game_world.remove_object(self)
 
     # fill here
     def get_bb(self):

@@ -50,10 +50,10 @@ class Zombie:
 
     def draw(self):
         if self.dir < 0:
-            Zombie.images['Walk'][int(self.frame)].composite_draw(0, 'h', self.x, self.y, 200, 200)
+            Zombie.images['Walk'][int(self.frame)].composite_draw(0, 'h', self.x, self.y, self.w, self.h)
         else:
             Zombie.images['Walk'][int(self.frame)].draw(self.x, self.y, self.w, self.h)
-        draw_rectangle(*self.get_bb())
+        # draw_rectangle(*self.get_bb())
 
     def handle_event(self, event):
         pass
@@ -65,7 +65,6 @@ class Zombie:
         if group == 'ball:zombie':
             self.w /= 2
             self.h /= 2
-            self.y = 50
-            if self.w <= 0:
+            self.y = 90
+            if self.w < 100:
                 game_world.remove_object(self)
-
