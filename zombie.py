@@ -53,13 +53,13 @@ class Zombie:
             Zombie.images['Walk'][int(self.frame)].composite_draw(0, 'h', self.x, self.y, self.w, self.h)
         else:
             Zombie.images['Walk'][int(self.frame)].draw(self.x, self.y, self.w, self.h)
-        # draw_rectangle(*self.get_bb())
+        draw_rectangle(*self.get_bb())
 
     def handle_event(self, event):
         pass
 
     def get_bb(self):
-        return self.x - (self.w / 2), self.y - (self.h / 2), self.x + (self.w / 2), self.y + (self.h / 2)
+        return self.x - (self.w / 2) + 20, self.y - (self.h / 2), self.x + (self.w / 2), self.y + (self.h / 2)
 
     def handle_collision(self, group, other):
         if group == 'ball:zombie':
